@@ -63,7 +63,7 @@ services:
       - PASSWORD=    #Replace password
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Asia/Dubai
       - CHROME_CLI=https://github.com/0xmoei #optional
     volumes:
       - /root/chromium/config:/config
