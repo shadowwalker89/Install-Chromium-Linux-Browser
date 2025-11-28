@@ -59,19 +59,26 @@ services:
     security_opt:
       - seccomp:unconfined #optional
     environment:
-      - CUSTOM_USER=     #Replace username
-      - PASSWORD=    #Replace password
+      - CUSTOM_USER=mjadmin
+      - PASSWORD=Mousavi@6441
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Dubai
-      - CHROME_CLI=https://github.com/0xmoei #optional
+      - CHROME_CLI="--disable-gpu --disable-dev-shm-usage --no-sandbox --disable-features=VizDisplayCompositor"
     volumes:
       - /root/chromium/config:/config
     ports:
-      - 3010:3000   #Change 3010 to your favorite port if needed
-      - 3011:3001   #Change 3011 to your favorite port if needed
-    shm_size: "1gb"
+      - 3010:3000
+      - 3011:3001
+    shm_size: "2gb"
     restart: unless-stopped
+    
+    # --- بخش بهینه‌سازی که اضافه شد ---
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'      # <--- محدودیت به ۱ هسته CPU
+          memory: 2G       # <--- محدودیت به ۲ گیگابایت RAM
 ```
 > To save and exit: `Ctrl+X+Y+Enter` 
 
