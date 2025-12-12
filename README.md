@@ -59,8 +59,8 @@ services:
     security_opt:
       - seccomp:unconfined #optional
     environment:
-      - CUSTOM_USER=mjadmin
-      - PASSWORD=Mousavi@6441
+      - CUSTOM_USER=
+      - PASSWORD=
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Dubai
