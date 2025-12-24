@@ -33,6 +33,12 @@ docker --version
 ```
 realpath --relative-to /usr/share/zoneinfo /etc/localtime
 ```
+To configure a different timezone use the following command:
+'''
+timedatectl set-timezone [new/time_zone]
+'''
+The available time zones can be found in /usr/share/zoneinfo/
+
 
 ## Install Chromium
 **1. Create directory**
